@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace EventBus.Messages.Events
 {
-    public class IntegrationBaseEvent
+    public class IntegrationEventBase
     {
-        public IntegrationBaseEvent()
+        public IntegrationEventBase()
         {
             Id = Guid.NewGuid();
             CreationDate = DateTime.UtcNow;
         }
 
-        public IntegrationBaseEvent(Guid id, DateTime createDate)
+        public IntegrationEventBase(Guid id, DateTime createDate)
         {
             Id = id;
             CreationDate = createDate;

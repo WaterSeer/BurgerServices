@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Discount.Grpc.Extentions
 {
-    public static class HostExtensions
+    public static class HostExtentions
     {
         public static IHost MigrateDatabase<TContext>(this IHost host, int? retry = 0)
         {
@@ -61,7 +61,6 @@ namespace Discount.Grpc.Extentions
                     }
                 }
             }
-
             return host;
         }
     }

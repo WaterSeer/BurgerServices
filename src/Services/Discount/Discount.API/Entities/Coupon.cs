@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Doscount.API.Entities
+namespace Discount.API.Entities
 {
     public class Coupon
     {

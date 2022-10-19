@@ -1,8 +1,11 @@
-using Doscount.API.Repositories;
+using Discount.API.Repositories;
 using Microsoft.OpenApi.Models;
-using Doscount.API.Extentions;
+using Discount.API.Extentions;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
@@ -14,7 +17,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Discount.API", Version = "v1" });
 });
 
-
+//builder.Host.Start().MigrateDatabase<Program>();
 
 
 var app = builder.Build();

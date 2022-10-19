@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Doscount.API": {
+    "Discount.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

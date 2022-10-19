@@ -13,4 +13,5 @@ namespace Discount.Grpc.Entities
         public string Description { get; set; }
         public int Amount { get; set; }
     }
+
 }

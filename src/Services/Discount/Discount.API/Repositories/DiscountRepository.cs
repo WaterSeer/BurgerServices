@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using Doscount.API.Entities;
+using Discount.API.Entities;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Doscount.API.Repositories
+namespace Discount.API.Repositories
 {
     public class DiscountRepository : IDiscountRepository
     {

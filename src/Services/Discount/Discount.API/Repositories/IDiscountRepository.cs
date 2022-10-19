@@ -1,11 +1,11 @@
-﻿using Doscount.API.Entities;
+﻿using Discount.API.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Doscount.API.Repositories
+namespace Discount.API.Repositories
 {
     public interface IDiscountRepository
     {

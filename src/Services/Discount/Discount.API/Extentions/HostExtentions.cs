@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Doscount.API.Extentions
+namespace Discount.API.Extentions
 {
     public static class HostExtentions
     {

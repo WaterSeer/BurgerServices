@@ -19,9 +19,10 @@ namespace Ordering.Infrastructure.Persistence
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            foreach (var entity in ChangeTracker)
+            //TODO
+            //foreach (var entity in ChangeTracker)
             {
-
+                return base.SaveChangesAsync(cancellationToken);
             }
         }
 

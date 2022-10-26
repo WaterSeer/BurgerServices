@@ -4,25 +4,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>6d21e34e-2622-4d86-9eea-c0d18b85dd1b</UserSecretsId>
+    <UserSecretsId>73fd956c-731b-4fc2-8412-7062809acd9d</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..\..</DockerfileContext>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Protos\discount.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.0" />  
-    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+  <ItemGroup>	
+    <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
-	<PackageReference Include="Dapper" Version="2.0.123" />
-	<PackageReference Include="Npgsql" Version="6.0.7" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\discount.proto" GrpcServices="Server" />
+    <ProjectReference Include="..\Ordering.Application\Ordering.Application.csproj" />
   </ItemGroup>
 
 </Project>

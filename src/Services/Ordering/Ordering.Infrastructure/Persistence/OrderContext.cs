@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Ordering.Domain.Common;
 using Ordering.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,29 @@ namespace Ordering.Infrastructure.Persistence
         public DbSet<Order> Orders { get; set; }
 
         public OrderContext(DbContextOptions<OrderContext> options) : base(options)
-        {
-
+        { 
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            //TODO
-            //foreach (var entity in ChangeTracker)
+            
+            foreach (var entry in ChangeTracker.Entries<EntityBase>())
             {
-                return base.SaveChangesAsync(cancellationToken);
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.Entity.CreatedDate = DateTime.Now;
+                        entry.Entity.CreatedBy = "swn";
+                        break;
+                    case EntityState.Modified:
+                        entry.Entity.LastModifiedDate = DateTime.Now;
+                        entry.Entity.LastModifiedBy = "swn";
+                        break;
+                }
+
+
             }
+            return base.SaveChangesAsync(cancellationToken);
         }
 
     }

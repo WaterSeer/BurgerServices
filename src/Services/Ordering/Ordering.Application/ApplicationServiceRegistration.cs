@@ -23,6 +23,6 @@ namespace Ordering.Application
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             return services;
-        }
+        } 
     }
 }

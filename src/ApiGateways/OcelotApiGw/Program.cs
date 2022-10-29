@@ -1,24 +1,57 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Cache.CacheManager;
 
-var builder = WebApplication.CreateBuilder(args);
+var host = new WebHostBuilder()
+    .UseKestrel()
+    .UseContentRoot(Directory.GetCurrentDirectory())
+    .ConfigureAppConfiguration((hostingContext, config) =>
+    {
+        config
+            .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+            .AddJsonFile("appsettings.json", true, true)
+            .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
+            .AddJsonFile("ocelot.json")
+            .AddJsonFile($"ocelot.{hostingContext.HostingEnvironment.EnvironmentName}.json")
+            .AddEnvironmentVariables();
+    })
+    .ConfigureServices(s => {
+        s.AddOcelot()
+            .AddCacheManager(settings => settings.WithDictionaryHandle());
+    })
+    .ConfigureLogging((hostingContext, logging) =>
+    {
+        //add your logging
+    })
+    .UseIISIntegration()
+    .Configure(app =>
+    {
+        app.UseOcelot().Wait();
+    });
 
 
-builder.Services.AddOcelot();
+
+var builder = host.Build();
+builder.Run();
 
 
-var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
-}
-//app.MapGet("/", () => "Hello World!");
 
-app.UseRouting();
+//var builder = WebApplication.CreateBuilder(args);
 
-await app.UseOcelot();
+//builder.Services.AddOcelot();
 
-app.Run();
+
+//var app = builder.Build();
+
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();    
+//}
+////app.MapGet("/", () => "Hello World!");
+
+//app.UseRouting();
+
+//await app.UseOcelot();
+
+//app.Run();

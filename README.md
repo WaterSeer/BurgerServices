@@ -1,6 +1,6 @@
 # BurgerServices
 
-## Implementation on microservices with .net tools on e-commerce microservice project
+## Map of microservices with .net tools for e-commerce microservice project
 
 ![microservices_remastered](https://user-images.githubusercontent.com/1147445/110304529-c5b70180-800c-11eb-832b-a2751b5bda76.png)
 
@@ -57,5 +57,5 @@ There is a couple of microservices which implemented e-commerce modules over **C
 You will need the following tools:
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-* [.Net Core 5 or later](https://dotnet.microsoft.com/download/dotnet-core/5)
+* [.Net Core 6](https://dotnet.microsoft.com/download/dotnet-core/5)
 * [Docker Desktop](https://www.docker.com/products/docker-desktop)

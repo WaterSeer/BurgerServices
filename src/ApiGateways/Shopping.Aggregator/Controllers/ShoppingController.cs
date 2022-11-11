@@ -20,10 +20,10 @@ namespace Shopping.Aggregator.Controllers
         }
 
         [HttpGet("{userName}", Name = "GetShopping")]
-        public async Task<IActionResult<ShoppingModel>> GetShopping(string userName)
-        {
+        //public async Task<IActionResult<ShoppingModel>> GetShopping(string userName)
+        //{
 
-        }
+        //}
         
         
         

@@ -29,7 +29,7 @@ builder.Services.AddMassTransit(config => {
         });
     });
 });
-builder.Services.AddMassTransitHostedService();
+//builder.Services.AddMassTransitHostedService();
 
 
 //Gemeral Configuration

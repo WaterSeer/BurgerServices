@@ -8,10 +8,10 @@ namespace Shopping.Aggregator.Extentions
 {
     public static class HttpClientExtentions
     {
-        public static async Task<T> ReadContentAt<T>(this HttpResponseMessage responseMessage)
-        {
-            var content = await responseMessage.Content.ReadAsStringAsync();
+        //public static async Task<T> ReadContentAt<T>(this HttpResponseMessage responseMessage)
+        //{
+        //    var content = await responseMessage.Content.ReadAsStringAsync();
             
-        }
+        //}
     }
 }

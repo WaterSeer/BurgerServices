@@ -35,9 +35,11 @@ namespace Ordering.Infrastructure.Mail
 
             var from = new EmailAddressAttribute
             {
-                Email = _emailSettingsty.FromAddress,
-                Name = _emailSettingsty.FromName
+                //Email = _emailSettingsty.FromAddress,
+                //Name = _emailSettingsty.FromName
             };
+
+            return false;
 
 
         }
